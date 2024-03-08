@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  # postgres database
+  db:
+    image: postgres:14
+    container_name: tekuniv-userdb
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: tekuniv-password
+      POSTGRES_USER: tekuniv-user
+      POSTGRES_DB: tekuniv-userdb
+
