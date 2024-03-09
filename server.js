@@ -22,7 +22,7 @@ app.use('/api/v1', userAuthRoutes);
 sequelize.authenticate()
 	.then(() => {
 			logger.info('Connection has been established successfully.');
-			app.listen(port, () => logger.info(`tekuniv-userdata-service is running on port ${port} `));
+			app.listen(port, () => logger.info(`tekuniv-auth-service is running on port ${port} `));
 	})
 	.catch(err => {
     logger.error('Unable to connect to the database:', err);
