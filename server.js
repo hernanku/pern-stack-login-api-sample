@@ -1,3 +1,4 @@
+// server.js
 const express = require('express');
 const dotenv = require('dotenv');
 
@@ -27,5 +28,4 @@ sequelize.authenticate()
     logger.error('Unable to connect to the database:', err);
     process.exit(1);
   });
-
 
