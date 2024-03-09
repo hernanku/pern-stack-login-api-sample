@@ -109,13 +109,13 @@ exports.signoutUser = async (req, res) => {
             })
             logger.info(`Session ${sessionId} invalidated successfully.`)
         } else {
-            console.log("Session found or already expired:", sessionId)
             res.status(400).json({ message: `Session ${sessionId} not found, or already expired.` });
+            logger.info(`Session ${sessionId} not found, or already expired.`)
         }
 
     } catch (error) {
-        logger.error(error)
         res.status(500).json({ message: `Error signing out user` });
+        logger.error(`Error signing out session ${sessionId}`, error)
     }
 };
 
